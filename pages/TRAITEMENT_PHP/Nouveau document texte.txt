@@ -1,0 +1,147 @@
+<?php require_once('cnxion.php');?>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Plateforme Covid-19 au Sénégal</title>
+
+<script src="036c985da2.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="CoroView_style.css"/>	
+<link rel="stylesheet" type="text/css" href="css\cartographie.css" />
+<style type="text/css">
+.auto-style1 {
+	text-align: center;
+	margin-top: 0px;
+	margin-left:auto;
+	margin-right:auto;
+}
+</style>
+</head>
+
+<body>
+<div id="global">
+<div id="entete">
+		<video autoplay="autoplay" muted="" class="video_entete" >
+			<source src="Images/Presentation2.mp4" type="video/mp4">
+		</video>
+		<p class="nomsite"> Information sur le Coronavirus </p>
+		<div id="formauto">
+			<form name="formauto" method="post" action="">
+			  <select  name="motcle" id="motcle" placeholder="Username">
+                <option value="vid">Vidéos &amp Communiqués</option>
+                <option value="alt">Alertes</option>
+                <option value="dat">Nous contacter</option>
+              </select>
+			  <input class="btfind" type="submit" name="btsubmit" value=" Recherche"/>
+		  	</form>
+		</div>
+		
+	<div class="glowing">
+<marquee behavior="scroll" direction="left"> 
+
+<span>R</span>
+<span>E</span>	
+<span>S</span>	
+<span>T</span>
+<span>E</span>
+<span>Z</span>	
+<span>-</span>	
+<span>C</span>	
+<span>H</span>
+<span>E</span>	
+<span>Z</span>	
+<span>-</span>	
+<span>V</span>
+<span>O</span>	
+<span>U</span>	
+<span>S</span>
+<span>!</span>
+
+</marquee>					
+</div>	
+</div>
+</div>
+
+	<div id="articles">	
+	<?php 
+	if(isset($_POST['btsubmit'])){
+		$mc=$_POST['motcle'];
+		if($mc=="vid"){
+echo("<script>location.href = 'video.php';</script>");		}
+		if($mc=="alt"){
+echo("<script>location.href = 'Alertes.php';</script>");			}
+		if($mc=="dat"){
+echo("<script>location.href = 'contacts.php';</script>");			}
+	}
+		?>	
+</div>
+<form action="cas.php" method="post">
+<div class="Choix">
+<button class="btn1 choice"title="Plus de détails" name="pos">Cas positifs <i class="fas fa-user-md"></i></button>
+<button class="btn1 choice"title="Plus de détails" name="imp">Cas importés <i class="fas fa-plane-arrival"></i></button>
+<button class="btn1 choice"title="Plus de détails" name="cont">Cas contacts <i class="fas fa-person-booth"></i></button>
+<button class="btn1 choice"title="Plus de détails" name="com">Cas communautaires <i class="fas fa-users"></i></button>
+<button class="btng choiceg"title="Plus de détails" name="guer">Cas guéris <i class="fas fa-user-shield"></i></button>
+<button class="btnd choiced"title="Plus de détails" name="dec">Décés <i class="fas fa-user-alt-slash"></i></button>
+</div>
+</form>
+<div id="global">
+		<p class="noms">Evolution du Covid-19 au Sénégal </p>
+<form id="formulaire_sup" name="formulaire" enctype="multipart/form-data" method="post" action="" >
+			
+		<fieldset>
+		<legend> Situation du jour (1er avril 2020)</legend>
+	
+		
+					<br />
+					<div id="resultat" class="grph">
+						<img src="TRAITEMENT_PHP/graphique1.php" alt=""/> <br /><br />
+					</div>	
+		
+					<br />
+					<div id="resultat" class="grph">	
+					<img src="TRAITEMENT_PHP/graphique2.php" /> <br /><br />
+					</div>	
+					
+</fieldset>
+		
+</form>
+		
+	<form id="formulaire_sup" name="formulaire" enctype="multipart/form-data" method="post" action="" >
+		
+		<fieldset>
+		<legend> Resultats : </legend>
+					<br />
+					<div id="resultat" class="grph">
+						<img src="TRAITEMENT_PHP/graphique3.php" /> <br /><br />
+					</div>	
+					
+		</fieldset>
+		
+	</form>
+<form id="formulaire_sup" name="formulaire" enctype="multipart/form-data" method="post" action="" >
+		
+		<fieldset>
+		<legend> Resultats : </legend>
+					<br />
+					<div id="resultat" class="grph">	
+					<img src="TRAITEMENT_PHP/graphique4.php" /> <br /><br />
+					</div>	
+					
+		</fieldset>
+		
+</form>
+<form id="formulaire_sup" name="formulaire" enctype="multipart/form-data" method="post" action="" >
+		
+		<fieldset>
+		<legend> Resultats : </legend>
+					<br />
+					<div id="resultat" class="grph" >	
+					<img src="TRAITEMENT_PHP/graphique9.php" /> <br /><br />
+					</div>	
+					
+		</fieldset>
+		
+</form>
+</div>		
+</body>
+</html>
